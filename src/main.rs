@@ -4,7 +4,7 @@ use macroquad::prelude::*;
 async fn main() {
     let mut x = screen_width() / 2.0;
     let mut y = screen_height() / 2.0;
-    let speed = 200.0;
+    let speed = 1000.0;
 
     loop {
         clear_background(DARKPURPLE);
