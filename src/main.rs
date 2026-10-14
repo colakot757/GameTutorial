@@ -2,15 +2,24 @@ use macroquad::prelude::*;
 
 #[macroquad::main("GameTutorial")]
 async fn main() {
+    let mut x = screen_width() / 2.0;
+    let mut y = screen_height() / 2.0;
+
     loop {
         clear_background(DARKPURPLE);
-        draw_text(
-            "Hello World!",
-            100.0,
-            100.0,
-            36.0,
-            Color::from_hex(0xffffff),
-        );
+        if is_key_down(KeyCode::Left) {
+            x -= 1.0
+        }
+        if is_key_down(KeyCode::Right) {
+            x += 1.0
+        }
+        if is_key_down(KeyCode::Up) {
+            y -= 1.0
+        }
+        if is_key_down(KeyCode::Down) {
+            y += 1.0
+        }
+        draw_circle(x, y, 10.0, ORANGE);
         next_frame().await
     }
 }
